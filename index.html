@@ -3,6 +3,16 @@
     <meta name="color-scheme" content="light dark">
   </head>
   <body>
-    <id="iptext";pre style="word-wrap: break-word; white-space: pre-wrap;">&lt;h1&gt;test&lt;/h1&gt;</pre>
+    <pre style="word-wrap: break-word;id="iptext";white-space: pre-wrap;">test</pre>
   </body>
+  <script>
+    function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+    document.getElementById("iptext").innerHTML = httpGet("https://api.myip.com/")
+  </script>
 </html>
